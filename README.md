@@ -16,6 +16,8 @@ I am not an experienced Java programmer, let alone Kotlin, so I am taking advant
 
 My contritbution to this application is distilling the documentation to make a basic HCE-enabled application and the code in [MainActivity.java](#) to update the current time in a timer and demonstrate how to dispatch those updates to the `CardService` class.
 
+This code doesn't do anything _by design_. It is meant to be used as a kind of starter-kit for your own more sophisticated applications.
+
 ## Configuration files
 
 The following files need to be updated or created in order to create an HCE-enabled application.
@@ -48,7 +50,9 @@ You will also need to add the following `service` entry to your `application` de
             		</intent-filter>
             		<meta-data android:name="android.nfc.cardemulation.host_apdu_service" android:resource="@xml/apduservice" />
        		</service>
+		
 		<!-- your other application settings here -->
+
 	</application>
 ```
 
@@ -64,6 +68,8 @@ Did you notice the pointer to `@xml/apduservice` in the example above? That's po
 </host-apdu-service>
 ```
 
+The value of the `aid-filter@android:name` property is a [ISO/IEC 7816-5:2004 application identifier](https://www.iso.org/standard/34259.html). This should be unique to your application but I haven't found any documentation describing how to create a new identifier that doesn't cost money yet. Pointers would be welcome.
+
 The `@string/aiddescription` and `@string/servicedesc` properties are pointers to corresponding entries in the `res/values/strings.xml` file. For example:
 
 ```
@@ -73,8 +79,6 @@ The `@string/aiddescription` and `@string/servicedesc` properties are pointers t
     <string name="servicedesc">NFC Clock</string>
 </resources>
 ```
-
-The value of the `aid-filter@android:name` property is a [ISO/IEC 7816-5:2004 application identifier](https://www.iso.org/standard/34259.html). This should be unique to your application but I haven't found any documentation describing how to create a new identifier that doesn't cost money yet. Pointers would be welcome.
 
 ## Known-knowns and gotchas
 
