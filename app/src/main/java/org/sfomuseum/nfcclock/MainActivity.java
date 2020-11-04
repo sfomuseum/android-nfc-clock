@@ -49,15 +49,17 @@ public class MainActivity extends AppCompatActivity {
                         }});
                 }
 
+
                 if (pm.hasSystemFeature(PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
                     Intent intent = new Intent(context, CardService.class);
                     intent.putExtra("ndefMessage", dt.toString());
-                    // Log.d("BROADCAST", intent.toString());
+                    // Log.d(TAG, intent.toString());
+
                     startService(intent);
                 }
             }
 
         };
 
-        t.scheduleAtFixedRate(task, 0, 5000);    }
+        t.scheduleAtFixedRate(task, 0, 1000);    }
 }
