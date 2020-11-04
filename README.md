@@ -10,7 +10,7 @@ Does that sound absurd? It should, because it is. This application is meant to s
 
 ## About the code
 
-This application has a hybrid Java and Kotlin code base. That's because all of the actual work listening for NFC tag readers and sending responses is handled by @underwindfall 's `CardService.kt` class which was extracted from the [NFCAndroid](https://github.com/underwindfall/NFCAndroid/) repository.
+This application has a hybrid Java and Kotlin code base. That's because all of the actual work listening for NFC tag readers and sending responses is handled by [Qifan Yang](https://github.com/underwindfall/NFCAndroid/)'s `CardService.kt` class which was extracted from the [NFCAndroid](https://github.com/underwindfall/NFCAndroid/) repository.
 
 I am not an experienced Java programmer, let alone Kotlin, so I am taking advantage of the fact that the Android Studio IDE will let me mix and match the two languages seamlessly. Thanks, Google.
 
