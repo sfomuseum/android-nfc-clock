@@ -24,7 +24,7 @@ Does that sound absurd? It should, because it is. This application is meant to s
 
 ```
 <service
-            android:name=".KardService"
+            android:name=".CardService"
             android:exported="true"
             android:permission="android.permission.BIND_NFC_SERVICE">
             <intent-filter>
@@ -39,3 +39,5 @@ Does that sound absurd? It should, because it is. This application is meant to s
 ```
 
 ## See also
+
+* https://github.com/underwindfall/NFCAndroid/
