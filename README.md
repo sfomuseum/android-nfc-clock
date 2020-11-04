@@ -92,6 +92,8 @@ The following are notes that I took or copy-pasted from other sources in the pro
 
 * Unsurprisingly the NFC tag can not be broadcast or read through the screen side of the device, which is too bad since it would be useful to be able to display a target/instructions for a person to scan
 
+* NFC targets on mobile devices are finnicky.
+
 ## See also
 
 * https://developer.android.com/guide/topics/connectivity/nfc/nfc
