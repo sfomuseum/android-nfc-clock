@@ -3,6 +3,8 @@ package org.sfomuseum.nfcclock;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -14,22 +16,20 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
         PackageManager pm = this.getPackageManager();
 
         if (!pm.hasSystemFeature(PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
-            Log.i("MAIN", "NO HCE");
-            return;
+            Log.i(TAG, "Missing HCE functionality.");
         }
-        */
 
         Context context = this;
-
         Timer t = new Timer();
 
         TimerTask task = new TimerTask() {
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
                 Date dt = Calendar.getInstance().getTime();
-                Log.d("CLOCK", dt.toString());
+                Log.d(TAG, "Set time as " + dt.toString());
 
                 TextView t = findViewById(R.id.current_time);
 
@@ -49,16 +49,15 @@ public class MainActivity extends AppCompatActivity {
                         }});
                 }
 
-                /*
-                Intent intent = new Intent(context, KardService.class);
-                intent.putExtra("ndefMessage", dt.toString());
-
-                Log.i("BROADCAST", intent.toString());
-                startService(intent);
-                 */
+                if (pm.hasSystemFeature(PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
+                    Intent intent = new Intent(context, CardService.class);
+                    intent.putExtra("ndefMessage", dt.toString());
+                    // Log.d("BROADCAST", intent.toString());
+                    startService(intent);
+                }
             }
 
         };
 
-        t.scheduleAtFixedRate(task, 0, 1000);    }
+        t.scheduleAtFixedRate(task, 0, 5000);    }
 }

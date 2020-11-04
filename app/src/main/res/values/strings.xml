@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">NFCClock</string>
+    <string name="app_name">NFC Clock</string>
+    <string name="aiddescription">NFC Clock</string>
+    <string name="servicedesc">NFC Clock</string>
 </resources>
