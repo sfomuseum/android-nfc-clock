@@ -16,7 +16,7 @@ I am not an experienced Java programmer, let alone Kotlin, so I am taking advant
 
 My contritbution to this application is distilling the documentation to make a basic HCE-enabled application and the code in [MainActivity.java](#) to update the current time in a timer and demonstrate how to dispatch those updates to the `CardService` class.
 
-The crux of the code involves dispatching an `Intent` to the `CardService` service containing the value of the NDEF message for the NFC antenna to broadcast:
+The crux of the code involves dispatching an `Intent` to the `CardService` service containing the value of the NDEF message for the underlying HCE service to broadcast:
 
 ```
 	Context context = this;
