@@ -33,7 +33,7 @@ The crux of the code involves dispatching an `Intent` to the `CardService` servi
 
         };
 
-        t.scheduleAtFixedRate(task, 0, 1000);    }
+        t.scheduleAtFixedRate(task, 0, 1000);   
 ```
 
 This code doesn't do anything else _by design_. It is meant to be used as a kind of starter-kit for your own more sophisticated applications.
