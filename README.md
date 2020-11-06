@@ -1,5 +1,7 @@
 # android-nfc-clock
 
+![](images/nfcclock-1280.jpg)
+
 Simple Android application to demonstrate NFC hardware card emulation (HCE) functionality.
 
 ## Description
