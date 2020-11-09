@@ -122,3 +122,5 @@ The following are notes that I took or copy-pasted from other sources in the pro
 * https://developer.android.com/guide/topics/connectivity/nfc/hce
 * https://github.com/underwindfall/NFCAndroid/
 * https://github.com/championswimmer/NFC-host-card-emulation-Android
+
+* https://millsfield.sfomuseum.org/blog/2020/11/09/nfcclock/
