@@ -118,7 +118,7 @@ class CardService : HostApduService() {
 
             Log.i(TAG, "Set NFC tag as " + intent.getStringExtra("ndefMessage"))
             NDEF_URI =
-                    NdefMessage(createTextRecord("en", intent.getStringExtra("ndefMessage"), NDEF_ID))
+                    NdefMessage(createTextRecord("en", intent.getStringExtra("ndefMessage")!!, NDEF_ID))
 
             NDEF_URI_BYTES = NDEF_URI.toByteArray()
             NDEF_URI_LEN = fillByteArrayToFixedDimension(
